@@ -1,19 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Variáveis da Navbar
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  // 2. Efeito de Scroll na Navbar (Troca de Cores)
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      // Fundo branco
       navbar.classList.add('glass-light', 'shadow-lg', 'py-3');
       navbar.classList.remove('py-5', 'bg-transparent');
-      
-      // Letras escuras nos links e botão mobile
       navLinks.forEach(link => {
         link.classList.remove('text-white', 'hover:text-gray-200');
         link.classList.add('text-gray-700', 'hover:text-brand-blue');
@@ -23,11 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileToggle.classList.add('text-brand-blue');
       }
     } else {
-      // Fundo transparente
       navbar.classList.remove('glass-light', 'shadow-lg', 'py-3');
       navbar.classList.add('py-5', 'bg-transparent');
-      
-      // Letras brancas nos links e botão mobile
       navLinks.forEach(link => {
         link.classList.remove('text-gray-700', 'hover:text-brand-blue');
         link.classList.add('text-white', 'hover:text-gray-200');
@@ -39,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Toggle do Menu Mobile
   if (mobileToggle && mobileMenu) {
     mobileToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
@@ -63,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Animações de Scroll (Reveal)
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -76,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
-  // 5. Animação dos Contadores (Números)
   const statsSection = document.getElementById('stats-section');
   let animated = false;
 
