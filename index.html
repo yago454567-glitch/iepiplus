@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iEPI+ | Gestão Inteligente de EPIs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#003399',
+              'brand-light-blue': '#0073e6',
+              'brand-green': '#1e9c00',
+              'brand-light-green': '#39cc18',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-sans antialiased bg-white text-gray-800 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-5 bg-transparent">
+      <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3 group">
+          
+          <!-- ESPAÇO PARA A LOGO VERDADEIRA -->
+          <img src="images/Imagem1.png" alt="Logo iEPI+" class="h-16 w-auto transition-transform group-hover:scale-110 object-contain" />
+          
+          <span class="text-2xl font-black font-display tracking-tight">
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#solucao" class="nav-link text-sm font-medium text-white hover:text-gray-200 transition-colors">Solução</a>
+          <a href="#modulos" class="nav-link text-sm font-medium text-white hover:text-gray-200 transition-colors">Módulos</a>
+          <a href="#beneficios" class="nav-link text-sm font-medium text-white hover:text-gray-200 transition-colors">Benefícios</a>
+          
+          <!-- Botão de Suporte Navbar apontando para a seção FAQ -->
+          <a href="#suporte-faq" class="nav-link text-sm font-bold text-white hover:text-gray-200 transition-colors flex items-center gap-2 border-l border-white/20 pl-6 ml-2">
+            <i class="fas fa-question-circle"></i> Suporte
+          </a>
+
+          <a href="http://www.iepiplus.com.br" target="_blank" rel="noopener noreferrer" class="bg-brand-light-green hover:bg-brand-green text-white font-bold py-2.5 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 text-sm">
+            Acessar Plataforma
+          </a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="mobile-toggle" class="md:hidden text-white text-2xl transition-colors">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden glass-light mt-2 mx-4 rounded-2xl p-6 shadow-xl bg-white/90 backdrop-blur-md">
+        <div class="flex flex-col gap-4">
+          <a href="#solucao" class="mobile-link text-gray-700 font-medium">Solução</a>
+          <a href="#modulos" class="mobile-link text-gray-700 font-medium">Módulos</a>
+          <a href="#beneficios" class="mobile-link text-gray-700 font-medium">Benefícios</a>
+          
+          <!-- Botão de Suporte Mobile -->
+          <a href="#suporte-faq" class="mobile-link text-brand-blue font-bold flex items-center gap-2 py-2 border-t border-gray-200 mt-2">
+            <i class="fas fa-question-circle"></i> Suporte / FAQ
+          </a>
+
+          <a href="http://www.iepiplus.com.br" target="_blank" rel="noopener noreferrer" class="bg-brand-light-green text-white font-bold py-3 px-6 rounded-full text-center mt-2">
+            Acessar Plataforma
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-[#001a4d] via-brand-blue to-[#001a4d] overflow-hidden noise-bg">
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-brand-light-blue/10 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-light-green/10 rounded-full blur-3xl animate-float-delay"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/5 rounded-full"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] border border-white/10 rounded-full"></div>
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div class="animate-orbit">
+            <div class="w-3 h-3 bg-brand-light-green rounded-full shadow-lg shadow-brand-light-green/50"></div>
+          </div>
+        </div>
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10 w-full">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-slide-left">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+              <div class="w-2 h-2 bg-brand-light-green rounded-full animate-pulse"></div>
+              <span class="text-sm text-blue-200 font-medium">Plataforma 100% Digital</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tight font-display mb-8">
+              Gestão de EPIs
+              <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-light-green to-[#7fff00]">
+                Inteligente
+              </span>
+              <br />
+              <span class="text-4xl md:text-5xl font-bold text-blue-200">do início ao fim</span>
+            </h1>
+
+            <p class="text-lg text-blue-200/80 max-w-lg mb-10 leading-relaxed">
+              Simplifique, digitalize e transforme o controle de Equipamentos de Proteção Individual em um processo orientado por dados e inteligência operacional.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="http://www.iepiplus.com.br" target="_blank" rel="noopener noreferrer" class="group bg-brand-light-green hover:bg-brand-green text-white font-bold py-4 px-8 rounded-full shadow-2xl shadow-brand-light-green/30 hover:shadow-brand-light-green/50 transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
+                <span>Acessar Plataforma</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </a>
+              <a href="#solucao" class="glass text-white font-medium py-4 px-8 rounded-full hover:bg-white/15 transition-all duration-300 flex items-center gap-2">
+                <i class="fas fa-play-circle"></i>
+                <span>Conhecer</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden lg:flex justify-center items-center relative animate-slide-right">
+            <div class="relative w-96 h-96">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="">
+                  <img src="images/Imagem2.png" alt="Logo iEPI+" class="w-64 h-64 object-contain" />
+                </div>
+              </div>
+
+              <!-- Floating badges -->
+              <div class="absolute top-10 right-4 glass rounded-2xl p-4 animate-float shadow-xl">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-brand-light-green/20 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-check text-brand-light-green"></i>
+                  </div>
+                  <div>
+                    <p class="text-white text-xs font-medium">Entrega Registrada</p>
+                    <p class="text-blue-300 text-xs">Agora mesmo</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute bottom-8 left-0 glass rounded-2xl p-4 animate-float-delay shadow-xl">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-brand-light-blue/20 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-chart-line text-brand-light-blue"></i>
+                  </div>
+                  <div>
+                    <p class="text-white text-xs font-medium">KPIs Atualizados</p>
+                    <p class="text-blue-300 text-xs">Tempo real</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute top-1/2 -left-20 glass rounded-2xl p-3 animate-float shadow-xl">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-box text-yellow-400 text-sm"></i>
+                  </div>
+                  <p class="text-white text-xs font-medium">Estoque OK</p>
+                </div>
+              </div>
+
+              <div class="absolute bottom-4 right-8 glass rounded-2xl p-3 animate-float-delay shadow-xl">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-shield-alt text-purple-400 text-sm"></i>
+                  </div>
+                  <p class="text-white text-xs font-medium">CA Válido</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+          <path d="M0 120L60 105C120 90 240 60 360 52.5C480 45 600 60 720 67.5C840 75 960 75 1080 67.5C1200 60 1320 45 1380 37.5L1440 30V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 60 120H0Z" fill="white"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats-section" class="py-16 bg-white relative z-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="reveal text-center p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div id="stat-1" class="text-5xl font-black text-brand-blue font-display">0%</div>
+            <p class="text-gray-600 mt-2 font-medium">Digital e sem papel</p>
+          </div>
+          <div class="reveal text-center p-8 rounded-3xl bg-gradient-to-br from-green-50 to-white border border-green-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div id="stat-2" class="text-5xl font-black text-brand-green font-display">0</div>
+            <p class="text-gray-600 mt-2 font-medium">Módulos integrados</p>
+          </div>
+          <div class="reveal text-center p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div id="stat-3" class="text-5xl font-black text-brand-blue font-display">0°</div>
+            <p class="text-gray-600 mt-2 font-medium">Visão completa da operação</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solucao" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="reveal text-center mb-16">
+          <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-bold px-4 py-1.5 rounded-full mb-4">A SOLUÇÃO</span>
+          <h2 class="text-4xl md:text-5xl font-black text-brand-blue font-display tracking-tight">
+            Mais que um sistema,
+            <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-light-blue">uma ferramenta estratégica</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="reveal lg:col-span-2 lg:row-span-2 bg-gradient-to-br from-brand-blue to-[#001a4d] rounded-3xl p-10 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-light-green/10 rounded-full blur-3xl group-hover:bg-brand-light-green/20 transition-all duration-700"></div>
+            <div class="relative z-10 h-full flex flex-col justify-center">
+              <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                <i class="fas fa-brain text-3xl text-brand-light-green"></i>
+              </div>
+              <h3 class="text-3xl font-bold mb-4 font-display">Inteligência Operacional</h3>
+              <p class="text-blue-200 text-lg leading-relaxed max-w-md">
+                Identifica automaticamente quais EPIs cada colaborador necessita, considerando sua função, histórico de entregas, validade dos equipamentos e periodicidade de substituição.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <span class="bg-white/10 px-3 py-1.5 rounded-full text-sm">Automação</span>
+                <span class="bg-white/10 px-3 py-1.5 rounded-full text-sm">Dados em tempo real</span>
+                <span class="bg-white/10 px-3 py-1.5 rounded-full text-sm">Predição</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+            <div class="w-14 h-14 bg-brand-light-green/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-light-green/20 transition">
+              <i class="fas fa-file-signature text-2xl text-brand-green"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">Fichas Digitais</h4>
+            <p class="text-gray-500">Gerenciamento completo das fichas de EPI digitais com rastreabilidade total.</p>
+          </div>
+
+          <div class="reveal bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+            <div class="w-14 h-14 bg-brand-light-blue/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-light-blue/20 transition">
+              <i class="fas fa-chart-bar text-2xl text-brand-light-blue"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">KPIs & Dashboards</h4>
+            <p class="text-gray-500">Dashboards gerenciais com indicadores de consumo, custos, estoque e entregas.</p>
+          </div>
+
+          <div class="reveal bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+            <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-200 transition">
+              <i class="fas fa-sync-alt text-2xl text-purple-600"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">Trocas Controladas</h4>
+            <p class="text-gray-500">Controle de períodos de troca, motivos de substituição e aprovações de exceção.</p>
+          </div>
+
+          <div class="reveal bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+            <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-orange-200 transition">
+              <i class="fas fa-leaf text-2xl text-orange-500"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">Menos Desperdício</h4>
+            <p class="text-gray-500">Redução do uso de documentos físicos e otimização no consumo de EPIs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Section (CORE + ADD-ONS) -->
+    <section id="modulos" class="py-24 bg-gray-50 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-brand-blue/5 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-light-green/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="reveal text-center mb-16">
+          <span class="inline-block bg-brand-light-green/10 text-brand-green text-sm font-bold px-4 py-1.5 rounded-full mb-4">ECOSSISTEMA COMPLETO</span>
+          <h2 class="text-4xl md:text-5xl font-black text-brand-blue font-display tracking-tight">
+            Monte seu sistema ideal
+          </h2>
+          <p class="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
+            O iEPI+ cresce com você. Comece com a base essencial do sistema e adicione novos módulos expansíveis conforme a sua necessidade.
+          </p>
+        </div>
+
+        <div class="reveal mb-16">
+          <div class="flex items-center gap-3 mb-6 border-b border-gray-300 pb-2">
+            <i class="fas fa-star text-brand-blue text-2xl"></i>
+            <h3 class="text-3xl font-bold text-gray-900 font-display">Sistema Principal</h3>
+          </div>
+          
+          <div class="bg-white p-8 md:p-10 rounded-3xl border-2 border-brand-blue shadow-lg flex flex-col md:flex-row gap-8 items-center relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div class="absolute top-0 right-0 bg-brand-blue text-white text-xs font-bold px-4 py-2 rounded-bl-xl tracking-wider">MÓDULO BASE INCLUSO</div>
+            
+            <div class="w-24 h-24 mod-basico rounded-2xl flex items-center justify-center text-white shrink-0 shadow-xl group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-users text-4xl"></i>
+            </div>
+            
+            <div class="flex-1">
+              <h4 class="font-black text-3xl text-gray-900 mb-3 font-display">Módulo Básico</h4>
+              <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                No módulo básico são realizados os cadastros iniciais e essenciais para o funcionamento da aplicação de Entrega de EPI, garantindo agilidade e segurança no processo.
+              </p>
+              
+              <div class="flex flex-wrap gap-3">
+                <span class="text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-4 py-2 rounded-lg flex items-center gap-2">
+                  <i class="fas fa-check-circle text-brand-blue"></i> Cadastro de Colaboradores e Produtos
+                </span>
+                <span class="text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-4 py-2 rounded-lg flex items-center gap-2">
+                  <i class="fas fa-check-circle text-brand-blue"></i> Entrega de EPI
+                </span>
+                <span class="text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-4 py-2 rounded-lg flex items-center gap-2">
+                  <i class="fas fa-check-circle text-brand-blue"></i> Ficha de EPI e Listagem
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="flex items-center justify-between mb-8 border-b border-gray-300 pb-2">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-plus-circle text-brand-light-green text-2xl"></i>
+              <h3 class="text-3xl font-bold text-gray-900 font-display">Expansões</h3>
+            </div>
+            <span class="hidden md:inline-block text-xs bg-gray-200 text-gray-600 font-bold px-4 py-1.5 rounded-full tracking-wide">ADQUIRIDOS SEPARADAMENTE</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl p-8 border-t-4 border-yellow-500 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative pt-12 group">
+              <span class="absolute top-5 right-5 bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">OPCIONAL</span>
+              <div class="w-16 h-16 mod-entrada rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                <i class="fas fa-box-open text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-gray-800 mb-2 font-display">Entrada</h3>
+              <p class="text-gray-500 mb-6 flex-grow leading-relaxed">Gerenciamento das necessidades de reposição de estoque (compras), garantindo um planejamento eficiente e o abastecimento adequado dos itens.</p>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-yellow-600 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Cadastro de Fornecedores</span></li>
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-yellow-600 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Gestão de Compras</span></li>
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-yellow-600 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Listagem de Necessidade</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border-t-4 border-purple-500 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative pt-12 group">
+              <span class="absolute top-5 right-5 bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">OPCIONAL</span>
+              <div class="w-16 h-16 mod-estoque rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                <i class="fas fa-cube text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-gray-800 mb-2 font-display">Estoque</h3>
+              <p class="text-gray-500 mb-6 flex-grow leading-relaxed">Gerenciar saldos disponíveis e localizar os EPIs de forma rápida e precisa, otimizando as atividades de separação e entrega.</p>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-purple-500 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Saldos e Localização</span></li>
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-purple-500 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Apuração de Inventário</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border-t-4 border-orange-500 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative pt-12 group">
+              <span class="absolute top-5 right-5 bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">OPCIONAL</span>
+              <div class="w-16 h-16 mod-gestao rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                <i class="fas fa-chart-pie text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-gray-800 mb-2 font-display">Gestão</h3>
+              <p class="text-gray-500 mb-6 flex-grow leading-relaxed">Controle de períodos de troca, motivos de substituição, aprovações de exceção e KPIs gerenciais com alertas visuais.</p>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-500 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Requisição e Aprovação de Trocas</span></li>
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-orange-500 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Dashboards Customizados</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border-t-4 border-green-600 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative pt-12 group">
+              <span class="absolute top-5 right-5 bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">OPCIONAL</span>
+              <div class="w-16 h-16 mod-governo rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                <i class="fas fa-landmark text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-gray-800 mb-2 font-display">Governo</h3>
+              <p class="text-gray-500 mb-6 flex-grow leading-relaxed">Verificar validade, características e situação do EPI, garantindo conformidade com normas de segurança do trabalho.</p>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-green-600 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Validação, Consulta e Listagem CA</span></li>
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-green-600 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Dados do Ministério do Trabalho</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border-t-4 border-red-500 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col relative pt-12 group">
+              <span class="absolute top-5 right-5 bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">OPCIONAL</span>
+              <div class="w-16 h-16 mod-operacional rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                <i class="fas fa-hard-hat text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-black text-gray-800 mb-2 font-display">Operacional</h3>
+              <p class="text-gray-500 mb-6 flex-grow leading-relaxed">O processo de entrega torna-se mais inteligente, validando equipamentos de acordo com a função e perfil do colaborador.</p>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-red-500 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Cadastro de Funções e EPIs</span></li>
+                <li class="flex items-start gap-2.5"><i class="fas fa-check-circle text-red-500 mt-0.5 text-sm"></i><span class="text-sm text-gray-600">Perfil Automático</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="reveal text-center mb-16">
+          <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-bold px-4 py-1.5 rounded-full mb-4">RESULTADOS</span>
+          <h2 class="text-4xl md:text-5xl font-black text-brand-blue font-display tracking-tight">
+            Transforme sua gestão
+          </h2>
+          <p class="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
+            O iEPI+ conecta segurança, produtividade e gestão inteligente em uma única plataforma.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
+          <div class="reveal relative">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
+                <i class="fas fa-user-plus text-2xl text-white"></i>
+              </div>
+              <div class="text-sm font-bold text-gray-400 mb-1">PASSO 1</div>
+              <h4 class="text-xl font-bold text-gray-800 mb-2">Cadastre</h4>
+              <p class="text-gray-500 text-sm">Colaboradores, produtos e funções em minutos</p>
+            </div>
+            <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-200"></div>
+          </div>
+
+          <div class="reveal relative">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-brand-light-blue rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
+                <i class="fas fa-clipboard-check text-2xl text-white"></i>
+              </div>
+              <div class="text-sm font-bold text-gray-400 mb-1">PASSO 2</div>
+              <h4 class="text-xl font-bold text-gray-800 mb-2">Registre</h4>
+              <p class="text-gray-500 text-sm">Entregas, devoluções e movimentações</p>
+            </div>
+            <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-200"></div>
+          </div>
+
+          <div class="reveal relative">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
+                <i class="fas fa-chart-line text-2xl text-white"></i>
+              </div>
+              <div class="text-sm font-bold text-gray-400 mb-1">PASSO 3</div>
+              <h4 class="text-xl font-bold text-gray-800 mb-2">Analise</h4>
+              <p class="text-gray-500 text-sm">KPIs, dashboards e indicadores em tempo real</p>
+            </div>
+            <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-gray-200"></div>
+          </div>
+
+          <div class="reveal relative">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-brand-light-green rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg">
+                <i class="fas fa-trophy text-2xl text-white"></i>
+              </div>
+              <div class="text-sm font-bold text-gray-400 mb-1">PASSO 4</div>
+              <h4 class="text-xl font-bold text-gray-800 mb-2">Otimize</h4>
+              <p class="text-gray-500 text-sm">Reduza custos, desperdícios e aumente conformidade</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="reveal">
+            <div class="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 group">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform">
+                <i class="fas fa-sliders-h text-xl text-white"></i>
+              </div>
+              <p class="font-bold text-gray-800 text-sm">Mais Controle</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 group">
+              <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform">
+                <i class="fas fa-check-circle text-xl text-white"></i>
+              </div>
+              <p class="font-bold text-gray-800 text-sm">Mais Conformidade</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 group">
+              <div class="w-14 h-14 bg-gradient-to-br from-lime-400 to-green-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform">
+                <i class="fas fa-leaf text-xl text-white"></i>
+              </div>
+              <p class="font-bold text-gray-800 text-sm">Menos Desperdício</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 group">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform">
+                <i class="fas fa-user-shield text-xl text-white"></i>
+              </div>
+              <p class="font-bold text-gray-800 text-sm">Maior Segurança</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & Suporte Section -->
+    <section id="suporte-faq" class="py-24 bg-gray-50 border-t border-gray-200">
+      <div class="max-w-4xl mx-auto px-6">
+        
+        <!-- FAQ Cabeçalho -->
+        <div class="text-center mb-16 reveal">
+          <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-bold px-4 py-1.5 rounded-full mb-4">AJUDA E SUPORTE</span>
+          <h2 class="text-4xl md:text-5xl font-black text-brand-blue font-display tracking-tight">Perguntas Frequentes</h2>
+          <p class="text-gray-600 mt-4 text-lg">Tire suas dúvidas rapidamente ou entre em contato com nossa equipe.</p>
+        </div>
+
+        <!-- Itens do FAQ -->
+        <div class="space-y-4 mb-16 reveal">
+          
+          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <button class="faq-btn w-full px-6 py-5 text-left font-bold text-gray-800 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition-colors">
+              <span class="text-lg">Como funciona a contratação dos módulos?</span>
+              <i class="fas fa-chevron-down text-brand-light-blue transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4 mt-1">
+              O iEPI+ foi desenhado para crescer com a sua empresa. Você adquire o Módulo Básico (obrigatório e essencial) e, caso necessite de mais controle, pode adicionar os módulos de Entrada, Estoque, Gestão, Governo ou Operacional como expansões separadas a qualquer momento.
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <button class="faq-btn w-full px-6 py-5 text-left font-bold text-gray-800 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition-colors">
+              <span class="text-lg">Como o sistema ajuda a reduzir os desperdícios?</span>
+              <i class="fas fa-chevron-down text-brand-light-blue transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4 mt-1">
+              Através do controle de validades, justificativas para trocas antecipadas e gestão de estoque em tempo real. O sistema inibe trocas desnecessárias e alerta os gestores sobre o uso indevido, garantindo que o EPI seja substituído apenas quando realmente necessário.
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <button class="faq-btn w-full px-6 py-5 text-left font-bold text-gray-800 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition-colors">
+              <span class="text-lg">O que é a Validação do CA (Módulo Governo)?</span>
+              <i class="fas fa-chevron-down text-brand-light-blue transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4 mt-1">
+              O Certificado de Aprovação (CA) é obrigatório para garantir a eficácia do equipamento. O módulo de Governo consulta os dados oficiais do Ministério do Trabalho e Emprego, bloqueando a entrega de equipamentos com CA vencido ou inválido, protegendo a sua empresa de passivos trabalhistas.
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário de Contato -->
+        <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-xl reveal">
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-brand-light-blue/10 text-brand-light-blue rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">Não encontrou o que precisa?</h3>
+            <p class="text-gray-500 mt-2">Envie-nos um e-mail preenchendo os dados abaixo e retornaremos o mais breve possível.</p>
+          </div>
+
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-bold text-gray-700 mb-2">Seu Nome Completo</label>
+                <input type="text" id="nome-suporte" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="Ex: João da Silva">
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-700 mb-2">Seu E-mail Corporativo</label>
+                <input type="email" id="email-suporte" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="joao@suaempresa.com.br">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">Assunto / Motivo</label>
+              <select id="assunto-suporte" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors text-gray-700">
+                <option value="comercial@iepiplus.com.br">Interesse de compra</option>
+                <option value="suporte@iepiplus.com.br">Suporte (Clientes Ativos)</option>
+                <option value="financeiro@iepiplus.com.br">Cobranças e Contratos</option>
+                <option value="contato@iepiplus.com.br">Assuntos Gerais</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">Mensagem</label>
+              <textarea id="mensagem-suporte" required rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-colors" placeholder="Como podemos te ajudar hoje?"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brand-blue hover:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2 text-lg">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem para o Suporte
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden bg-gradient-to-br from-brand-blue via-[#001a4d] to-brand-blue noise-bg">
+      <div class="absolute inset-0">
+        <div class="absolute top-10 right-20 w-64 h-64 bg-brand-light-green/15 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-10 left-20 w-48 h-48 bg-brand-light-blue/15 rounded-full blur-3xl animate-float-delay"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+            <i class="fas fa-rocket text-brand-light-green text-sm"></i>
+            <span class="text-sm text-blue-200 font-medium">Comece agora</span>
+          </div>
+
+          <h2 class="text-4xl md:text-6xl font-black text-white font-display tracking-tight mb-6">
+            Pronto para transformar
+            <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-light-green to-[#7fff00]">sua gestão de EPIs?</span>
+          </h2>
+
+          <p class="text-xl text-blue-200/80 mb-10 max-w-2xl mx-auto">
+            Junte-se às empresas que já garantem mais segurança, conformidade e economia com o iEPI+.
+          </p>
+
+          <a href="http://www.iepiplus.com.br" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 bg-brand-light-green hover:bg-brand-green text-white font-black py-5 px-10 rounded-full shadow-2xl shadow-brand-light-green/30 hover:shadow-brand-light-green/50 transition-all duration-300 hover:scale-105 text-lg">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Acessar Plataforma</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a1a] text-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <!-- ESPAÇO PARA A LOGO VERDADEIRA -->
+              <img src="images/Imagem3.png" alt="Logo iEPI+" class="h-20 w-auto transition-transform group-hover:scale-110 object-contain" />
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Sistema Inteligente de Gestão e Controle de Entrega de EPIs do Início ao Fim.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-white mb-4">Navegação</h4>
+            <ul class="space-y-2">
+              <li><a href="#solucao" class="text-gray-400 hover:text-brand-light-green transition">A Solução</a></li>
+              <li><a href="#modulos" class="text-gray-400 hover:text-brand-light-green transition">Módulos</a></li>
+              <li><a href="#beneficios" class="text-gray-400 hover:text-brand-light-green transition">Benefícios</a></li>
+              <li><a href="http://www.iepiplus.com.br" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-light-green transition">Plataforma</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-white mb-4">Contato</h4>
+            <div class="flex gap-3">
+              <a href="http://www.iepiplus.com.br" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-light-green hover:border-brand-light-green transition-all">
+                <i class="fas fa-globe text-sm"></i>
+              </a>
+              <a href="#suporte-faq" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-light-blue hover:border-brand-light-blue transition-all">
+                <i class="fas fa-envelope text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-sm text-gray-500">
+            © 2026 iEPI+. Todos os direitos reservados.
+          </p>
+          <p class="text-sm text-gray-500">
+            Gestão inteligente de EPIs com tecnologia de ponta.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botão Flutuante de Suporte -->
+    <a href="#suporte-faq" class="fixed bottom-6 right-6 bg-brand-light-green hover:bg-brand-green text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50 group">
+      <i class="fas fa-question text-2xl"></i>
+      <!-- Tooltip indicativo -->
+      <span class="absolute right-16 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+        Precisa de Ajuda?
+      </span>
+    </a>
+
+    <!-- JavaScript Integrado -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileToggle = document.getElementById('mobile-toggle');
+
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            // Fundo branco
+            navbar.classList.add('glass-light', 'shadow-lg', 'py-3');
+            navbar.classList.remove('py-5', 'bg-transparent');
+            
+            // Letras escuras nos links e menu
+            navLinks.forEach(link => {
+              link.classList.remove('text-white', 'hover:text-gray-200');
+              link.classList.add('text-gray-700', 'hover:text-brand-blue');
+            });
+            if (mobileToggle) {
+              mobileToggle.classList.remove('text-white');
+              mobileToggle.classList.add('text-brand-blue');
+            }
+          } else {
+            // Fundo transparente
+            navbar.classList.remove('glass-light', 'shadow-lg', 'py-3');
+            navbar.classList.add('py-5', 'bg-transparent');
+            
+            // Letras brancas nos links e menu
+            navLinks.forEach(link => {
+              link.classList.remove('text-gray-700', 'hover:text-brand-blue');
+              link.classList.add('text-white', 'hover:text-gray-200');
+            });
+            if (mobileToggle) {
+              mobileToggle.classList.remove('text-brand-blue');
+              mobileToggle.classList.add('text-white');
+            }
+          }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (mobileToggle && mobileMenu) {
+          mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileToggle.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            } else {
+              icon.classList.remove('fa-bars');
+              icon.classList.add('fa-times');
+            }
+          });
+
+          mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.add('hidden');
+              const icon = mobileToggle.querySelector('i');
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            });
+          });
+        }
+
+        // Scroll reveal observer
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+          revealObserver.observe(el);
+        });
+
+        // Counter animation
+        const statsSection = document.getElementById('stats-section');
+        let animated = false;
+
+        const animateValue = (id, end, duration, suffix = '') => {
+          const obj = document.getElementById(id);
+          if(!obj) return;
+          let startTimestamp = null;
+          const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * end) + suffix;
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            }
+          };
+          window.requestAnimationFrame(step);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+              animated = true;
+              animateValue('stat-1', 100, 2000, '%');
+              animateValue('stat-2', 6, 1500, '');
+              animateValue('stat-3', 360, 2000, '°');
+            }
+          });
+        }, { threshold: 0.3 });
+
+        if (statsSection) {
+          statsObserver.observe(statsSection);
+        }
+
+        // FAQ Toggle
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            content.classList.toggle('hidden');
+            if(content.classList.contains('hidden')) {
+              icon.classList.remove('rotate-180');
+            } else {
+              icon.classList.add('rotate-180');
+            }
+          });
+        });
+
+// Comportamento do Formulário de Contato (Com roteamento de e-mail)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            const originalBg = 'bg-brand-blue';
+            const originalHover = 'hover:bg-blue-800';
+
+            // 1. Pega os valores preenchidos no formulário
+            const nome = document.getElementById('nome-suporte').value;
+            const emailCliente = document.getElementById('email-suporte').value;
+            const mensagem = document.getElementById('mensagem-suporte').value;
+            
+            // Pega o e-mail de destino e o texto do assunto escolhido no select
+            const selectAssunto = document.getElementById('assunto-suporte');
+            const emailDestino = selectAssunto.value; 
+            const assuntoTexto = selectAssunto.options[selectAssunto.selectedIndex].text;
+
+            // Altera visual do botão para estado de carregamento
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+
+            // 2. Envia os dados de forma dinâmica para o e-mail selecionado
+            fetch("https://formsubmit.co/ajax/" + emailDestino, {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    Nome: nome,
+                    Email: emailCliente,
+                    Assunto: assuntoTexto,
+                    Mensagem: mensagem
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+              // Estado de sucesso (Botão Verde)
+              btn.classList.remove(originalBg, originalHover, 'opacity-80', 'cursor-not-allowed');
+              btn.classList.add('bg-brand-green', 'hover:bg-green-700');
+              btn.innerHTML = '<i class="fas fa-check-circle"></i> Enviado para a equipe!';
+              
+              contactForm.reset(); // Limpa o formulário
+              
+              // Retorna ao estado original após 4 segundos
+              setTimeout(() => {
+                btn.classList.remove('bg-brand-green', 'hover:bg-green-700');
+                btn.classList.add(originalBg, originalHover);
+                btn.innerHTML = originalText;
+              }, 4000);
+            })
+            .catch(error => {
+              // Estado de erro caso falhe a conexão
+              alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+              btn.classList.remove('opacity-80', 'cursor-not-allowed');
+              btn.innerHTML = originalText;
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
